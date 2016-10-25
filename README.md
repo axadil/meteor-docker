@@ -5,6 +5,8 @@ in order to build a release of meteor project.
 
 Based on the idea of golang image https://hub.docker.com/_/golang/.
 
+## Example
+
 ```bash
 docker run --rm \
   -v "$PWD":/usr/src/my-app \
@@ -16,4 +18,19 @@ docker run --rm \
   meteor build ."
 ```
 
-Then you have my-app.tar.gz in your current directory
+Then you have my-app.tar.gz in your current directory,
+you can then create an image with a Dockerfile like this one.
+
+```Dockerfile
+FROM node:argon
+
+ADD my-app.tar.gz /opt/my-app
+
+WORKDIR /opt/my-app/bundle
+
+RUN cd programs/server && \
+    npm install && \
+    npm cache clear
+
+CMD node main.js
+```
