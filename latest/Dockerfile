@@ -1,8 +1,6 @@
 FROM buildpack-deps:jessie-scm
 
-ENV METEOR_VERSION=1.4.1.3
-
-RUN git clone --depth 1 --recursive -b release/METEOR@$METEOR_VERSION https://github.com/meteor/meteor.git /opt/meteor && \
+RUN git clone --depth 1 --recursive -b master https://github.com/meteor/meteor.git /opt/meteor && \
     ln -s /opt/meteor/meteor /usr/local/bin/meteor && \
     meteor help --unsafe-perm && \
     meteor npm cache clear && \
