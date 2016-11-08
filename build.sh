@@ -5,7 +5,7 @@ IMAGE_NAME="gosselj/meteor"
 TAG_1_3="1.3"
 ALIAS_TAG_1_3="1.3.5 1.3.5.1"
 TAG_1_4="1.4"
-ALIAS_TAG_1_4="1.4.1 1.4.1.3"
+ALIAS_TAG_1_4="1.4.2"
 
 docker build -t ${IMAGE_NAME}:${TAG_1_3} ./1.3/
 docker push ${IMAGE_NAME}:${TAG_1_3}
