@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IMAGE_NAME="gosselj/meteor"
+IMAGE_NAME="axadiltex/meteor"
 
 TAG_1_3="1.3"
 ALIAS_TAG_1_3="1.3.5 1.3.5.1"
